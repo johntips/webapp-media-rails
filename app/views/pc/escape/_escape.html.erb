@@ -1,0 +1,84 @@
+
+<% escape.each do |escapes| %>
+<div class="cardview">
+        <tr>
+            <td><%= escapes['id'] %></td>
+            <td><%= escapes['user_id'] %></td>
+            <td><%= escapes['collection_id'] %></td>
+            <td><%= escapes['location_name'] %></td>
+
+            <td><%= escapes['time'] %></td>
+            <td><%= escapes['content'] %></td>
+            <td><%= escapes['recommend_flag'] %></td>
+
+        </tr>
+
+        <div class="thumarea">
+            <p class="username">Nami Nonomura</p>
+            <p class="location">Waikiki Beach</p>
+            <img class="museicon" src="https://s3-ap-northeast-1.amazonaws.com/stg.image.tabi-muse/img/profile-11-20151012143506.jpg">
+        </div>
+        <p class="maincaption">2日目、早起きしてイルカに会いに行ってきました。
+            念願のドルフィンウォッチング♡<br>
+            朝日が海の向こうから見えてくるタイミングで
+            ホテル横のビーチから船に乗り込み出発。<br>
+            時刻は朝の6時！
+            島の漁師さんらしきお兄さん達の上手な船頭により、
+            波もあまり感じず、揺れることなく船は進みます。<br>
+            お天気にもよるかもしれませんが、船酔いするひとでも大丈夫な雰囲気。<br>
+            30分くらい経った頃かな、気持ちの良い波の音と揺れに加えて気持ちの良い朝日を浴びていたら
+            ついうとうとしてしまいましたが‥<br>
+            ついに！！！<br>
+            " イルカだよ！"<br>
+            との声で、すぐにカメラを持って<br>
+            立ち上がり、目を擦って探してみると…<br>
+            たくさんいる♡<br>
+            この日は運よく何度もたくさんの群れに遭遇できました！！！！！！<br>
+            前にほかの国で見た時は、数頭しか会えず、<br>
+            その上にきつい船酔いで微かにしかその姿が見えなかった苦い思い出があったので。。。<br>
+            ムービーに集中していたので写真があまりとれていませんが、小さくジャンプしてるイルカをキャッチしていました。
+            ボホール島に行ったら是非、早起きして参加するべきツアーだと思います！<br>
+            この後はイルカとバイバイして、船はバリカサグ島というところへ向かいます！</p>
+        <div class="tagarea">
+            <a class="tag">#ハワイ </a><a class="tag">#女子旅 </a><a class="tag">#リゾート </a><a class="tag">#癒やし </a>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div id="img1-1" class="swiper-slide " style="background-image:url(https://s3-ap-northeast-1.amazonaws.com/stg.image.tabi-muse/img/escape-20151120-192422-7.jpg)" onclick="openGarraly(this)">
+                    <p class="swipe-caption">BBQブロックパーティーで私たちがオーダーしたお店は、『Sea Grill』のFiesta Plate。
+                        1プレートでお腹がしっかりと満たされる盛り沢山な内容のプレートのお値段＄12。
+                        お友達同士で行ってシェアするのがおすすめです☆
+                    </p>
+                </div>
+                <div id="img1-2" class="swiper-slide" style="background-image:url(https://s3-ap-northeast-1.amazonaws.com/stg.image.tabi-muse/img/escape-20151120-192024-7.jpg)" onclick="openGarraly(this)">
+                    <p class="swipe-caption">マッチョなお兄様たちが、手際よくBOXに詰めてくれます。</p>
+                </div>
+                <div id="img1-3" class="swiper-slide" style="background-image:url(https://s3-ap-northeast-1.amazonaws.com/stg.image.tabi-muse/img/escape-20151120-192335-7.jpg)" onclick="openGarraly(this)">
+                    <p class="swipe-caption">ご満悦の美紀ぷん♡</p>
+                </div>
+                <div id="img1-4" class="swiper-slide" style="background-image:url(https://s3-ap-northeast-1.amazonaws.com/stg.image.tabi-muse/img/escape-20151120-192422-7.jpg)" onclick="openGarraly(this)">
+                    <p class="swipe-caption">メイン度通りのど真ん中を歩行者天国に！
+                        帰りは車が激混みなのでご注意を。</p>
+                </div>
+                <div id="img1-5" class="swiper-slide" style="background-image:url(https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)" onclick="openGarraly(this)">
+                    <p class="swipe-caption">インスタで作ったのは貼れた。
+                        つまり容量で制限かけてる説濃厚</p>
+                </div>
+                <div id="img1-6" class="swiper-slide" style="background-image:url(https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif)" onclick="openGarraly(this)">
+                    <p class="swipe-caption">文字列文字列文字列文字列文字列文字列文字列文字列文字列文字列文字列</p>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination top20"></div>
+        </div>
+        <div class="bottomarea">
+            <div class="iinearea">
+                <%=  image_tag('heart-pink.png',:class => "heart" )%>
+                <p class="iine">いいね　28件</p>
+            </div>
+            <div class="captionarea">
+                <p class="indexcaption">キャプションを表示</p>
+            </div>
+        </div>
+</div>
+<% end %>
