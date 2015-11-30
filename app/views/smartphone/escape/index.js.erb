@@ -1,0 +1,2 @@
+$('#escapes').append('<%= escape_javascript render :partial => "escape/escape",  locals: { escape: @escapes}  %>');
+$('.pagination').replaceWith('<%= escape_javascript will_paginate(@escapes) %>');

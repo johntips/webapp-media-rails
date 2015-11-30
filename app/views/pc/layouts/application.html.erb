@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WillPage1</title>
+    <title>旅MUSE: MUSE一覧｜憧れの女性達が綴る旅のウェブマガジン</title>
     <%= stylesheet_link_tag    "pc/application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "pc/application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="menu-muse">
+    <%= link_to image_tag('tabimuse_logo.png',:class => "logo"), :controller=>"escape", :action => "index" %>
+    <div class="menulist">
+        <%= link_to image_tag('timeline-pink.png',:class => "timeline"), :controller=>"escape", :action => "index" %>
+        <%= link_to image_tag('collection.png',:class => "collection"), :controller=>"escape", :action => "index" %>
+        <%= link_to image_tag('muse.png',:class => "muse"), :controller=>"escape", :action => "index" %>
+    </div>
+</div>
+
 
 <%= yield %>
 

@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>旅MUSE: MUSE一覧｜憧れの女性達が綴る旅のウェブマガジン</title>
-    <%= stylesheet_link_tag    "smartphone/application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "smartphone/application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-</head>
-<body>
-
 <div class="menu-muse">
     <%= link_to image_tag('tabimuse_logo.png',:class => "logo"), :controller=>"escape", :action => "index" %>
     <div class="menulist">
@@ -16,9 +6,3 @@
         <%= link_to image_tag('muse.png',:class => "muse"), :controller=>"escape", :action => "index" %>
     </div>
 </div>
-
-
-<%= yield %>
-
-</body>
-</html>

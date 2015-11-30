@@ -18,6 +18,21 @@ $(document).ready(function() {
       if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
         $('.pagination').text("Please Wait...");
         return $.getScript(url);
+        var swiper = new Swiper('.swiper-container', {
+          pagination: '.swiper-pagination',
+          effect: 'coverflow',
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: 'auto',
+          coverflow: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows : true
+          }
+        });
+        console.log('pagenated')
       }
     });
     return $(window).scroll();

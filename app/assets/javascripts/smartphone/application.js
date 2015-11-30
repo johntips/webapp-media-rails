@@ -5,6 +5,12 @@
 //= require jquery.infinitescroll
 //= require turbolinks
 
+//= require swiper
+//= require photoswipe
+//= require photoswipe-ui-default
+//= require index
+//= require timeline.coffee
+
 $(document).ready(function() {
   if ($('.pagination').length) {
     $(window).scroll(function() {

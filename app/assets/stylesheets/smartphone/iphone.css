@@ -1,11 +1,11 @@
 body {
-        background: #fff;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         font-size: 14px;
         color:#000;
         margin: 0;
         padding: 0;
         background-color: #F8F8F8;
+        width: 380px;
     }
       /*----------sp menucss-----------*/
     .menu{

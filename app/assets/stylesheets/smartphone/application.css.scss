@@ -1,8 +1,8 @@
 /*
- ~
- *= require_self
- *= require_tree ../smartphone
- */
 
-@import "../reset.css";
-@import "iphone.css";
+*= require reset.css
+*= require swiper.css
+*= require photoswipe.css
+*= require default-skin.css
+*= require smartphone/iphone.css
+ */

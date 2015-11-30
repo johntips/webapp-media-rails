@@ -1,2 +1,2 @@
-class Escapes_themes < ActiveRecord::Base
+class Escape_themes < ActiveRecord::Base
 end

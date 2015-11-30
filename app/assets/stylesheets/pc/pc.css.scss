@@ -47,14 +47,15 @@ body {
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        width: 300px!important;
-        height: 300px!important;
+        width: 340px;
+        height: 340px;
     }
     /*----------pc cardview css----------*/
    .cardview{
       padding: 1px 0 1px 0px;
       border: 1px solid #e9e9e9;
-      width: 400px;
+      min-width: 380px;
+      width: 30%;
       margin: 0 auto;
       position: relative;
       overflow: hidden;
@@ -70,37 +71,39 @@ body {
       width: 100%;
     }
     .username{
-      position: relative;
-      font-size: 16px;
-      color: rgba(0,0,0,1);
-      width:180px;
-      margin-top: 10px;
-      margin-left: 45px;
-      top: 15px;
+        position: relative;
+        font-size: 16px;
+        color: rgba(0,0,0,1);
+        width: 100%;
+        margin-top: 10px;
+        top: 15px;
+        text-align: left;
+        padding-left: 75px;
     }
     .location{
-      position: relative;
-
-      color: rgba(236,204,191,1);
-      width:180px;
-      margin-left: 31px;
-      top: 17px;
+        position: absolute;
+        color: rgba(236,204,191,1);
+        width: 100%;
+        top: 37px;
+        left: 76px;
+        text-align: left;
     }
     .museicon{
-      position: relative;
+        position: absolute;
         width: 50px;
         border-radius: 50px;
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
-        top: -27px;
-        left: -162px;
+        top: 8px;
+        left: 14px;
      }
     .maincaption{
       color: rgba(3, 3, 3, 0.40);
       width: 94%;
       margin-left: 3%;
       text-align: left;
-      margin-top: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
     .tag{
       color: rgba(236,204,191,1);

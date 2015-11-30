@@ -1,8 +1,10 @@
 /*
- ~
- *= require_self
+
+*= require reset.css
+*= require swiper.css
+*= require photoswipe.css
+*= require default-skin.css
+*= require smartphone/iphone.css
  */
-@import url(../reset.css);
-@import url(iphone.css);
 
 /*# sourceMappingURL=application.css.css.map */
