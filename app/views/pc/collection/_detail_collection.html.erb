@@ -1,0 +1,135 @@
+<% detail_collection.each do |collections| %>
+    <% @users = Users.where('id = ?', collections['user_id']) %>
+    <% @escapes = Escapes.where('collection_id = ?', collections['id']) %>
+
+
+    <% garally_count = 0 %>
+    <% image_count = 0 %>
+
+    <% @users.each do |user| %>
+        <style>
+            *::before,
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            .panel-in::before,
+            .panel {
+                background: url(<%= collections['cover_image_file']%>), no-repeat center;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+            .panel {
+                position: relative;
+            }
+
+            .panel-in::before {
+                content: "";
+                position: absolute;
+                background-clip: content-box;
+                width: 100%;
+                height: 100%;
+                /*padding: 30px;*/
+                top: 0;
+                left: 0;
+                -webkit-filter: blur(2px);
+                filter: blur(2px);
+            }
+        </style>
+        <div class="cardview">
+            <div class="thumbarea-collection-detail">
+                <div class="panel">
+                    <div class="panel-in">
+                        <div class="panel-main">
+                            <%= collections['content'] %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area-collection-detail">
+                <p class="username-collection-deail"><%= user['username'] %></p>
+                <img class="museicon-collection-detail" src="<%= user['thumb_image_file'] %>">
+            </div>
+            <% @escapes.each do |escape| %>
+                <div class="timeline-detail">
+                    <div class="spotarea">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <p class="day">1stDay</p>
+
+                        <p class="time">AM9:00</p>
+                        <!--<img class="location-icon" src="../../image/icon-location-gray.png">-->
+                        <%= image_tag('icon-location-gray.png', :class => "location-icon") %>
+                        <p class="location-area"><%= escape['location_name'] %></p>
+
+                        <p class="topcaption">
+                            <%= escape['content'] %>
+                        </p>
+                    </div>
+                    <% @images = Images.where('escape_id = ?', escape['id']) %>
+
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <% @images.each do |image| %>
+                                <div id="img1-1" class="swiper-slide slide-collection-detail" style="background-image:url(<%= image['image_file']%>)" onclick="openGarraly(this)">
+                                    <p class="swipe-caption">
+                                        <%= image['caption'] %>
+                                    </p>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+
+                    <div class="bottomarea-collection-detail">
+                        <div class="iinearea">
+                            <%=  image_tag('heart-pink.png',:class => "heart-collection-detail" )%>
+                            <p class="iine-collection-detail">いいね　<%= escape['tmp_favorite'] %>件</p>
+                        </div>
+                        <!--<div class="captionarea">-->
+                        <!--<p class="indexcaption">キャプションを表示</p>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+<% end %>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 10,
+            stretch: 20,
+            depth: 190,
+            modifier: 1,
+            slideShadows: true
+        }
+    });
+    $(document).ready(function ($) {
+
+        var name = "#example"
+        var count = 1
+        var idset = name + count
+        console.log(idset);
+        $('#example2').sliderPro({
+            // autoScaleLayers:false,//キャプションの自動変形
+            waitForLayers: true,//キャプションのアニメーションが終了してからスライドするか
+            width: 370,//横幅
+            height: 370,
+            autoplay: false,//自動再生
+            // arrows: true,//左右の矢印
+            buttons: true,//ナビゲーションボタン
+            slideDistance: 10//スライド同士の距離
+        });
+
+
+    });
+</script>

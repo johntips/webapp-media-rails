@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+　    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0",user-scalable=yes>
 <head>
     <title>旅MUSE: MUSE一覧｜憧れの女性達が綴る旅のウェブマガジン</title>
     <%= stylesheet_link_tag    "pc/application", media: "all", "data-turbolinks-track" => true %>
@@ -8,12 +9,18 @@
 </head>
 <body>
 
-<div class="menu-muse">
+<div class="menu">
     <%= link_to image_tag('tabimuse_logo.png',:class => "logo"), :controller=>"escape", :action => "index" %>
     <div class="menulist">
-        <%= link_to image_tag('timeline-pink.png',:class => "timeline"), :controller=>"escape", :action => "index" %>
-        <%= link_to image_tag('collection.png',:class => "collection"), :controller=>"escape", :action => "index" %>
-        <%= link_to image_tag('muse.png',:class => "muse"), :controller=>"escape", :action => "index" %>
+        <div class="menu_area">
+            <%= link_to image_tag('timeline-pink.png',:class => "timeline"), :controller=>"escape", :action => "index" %>
+        </div>
+        <div class="menu_area">
+            <%= link_to image_tag('collection.png',:class => "collection"), :controller=>"collection", :action => "index" %>
+        </div>
+        <div class="menu_area">
+            <%= link_to image_tag('muse.png',:class => "muse"), :controller=>"muse", :action => "index" %>
+        </div>
     </div>
 </div>
 

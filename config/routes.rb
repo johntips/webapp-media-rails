@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   root :controller => 'escape', :action => 'index'
 
+  get 'escape', to: 'escape#index'
+  get 'escape/:id', to: 'escape#show'
+
+  get 'collection', to: 'collection#index'
+  get 'collection/:id', to: 'collection#show'
+
+  get 'muse', to: 'muse#index'
+  get 'muse/:id', to: 'muse#show'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

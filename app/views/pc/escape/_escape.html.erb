@@ -3,16 +3,14 @@
 <% @users = Users.where('id = ?',escapes['user_id']) %>
 <% @images = Images.where('escape_id = ?',escapes['id']) %>
 <% @tags =  Escape_themes.where('escape_id = ?',escapes['id']) %>
-
+<% captiontop = nil  %>
 <% garally_count = 0 %>
     <% image_count = 0 %>
     <% @users.each do |user| %>
 <div class="cardview">
-
-
         <div class="thumarea">
             <p class="username"><%= user['name'] %></p>
-            <p class="location"><%= escapes['location_name'] %></p>
+            <p class="location">@<%= escapes['location_name'] %></p>
             <img class="museicon" src="<%= user['thumb_image_file'] %>">
         </div>
         <p class="maincaption">
@@ -29,23 +27,27 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <% @images.each do |image| %>
-                     <div id="img1-1" class="swiper-slide " style="background-image:url(<%= image['image_file'] %>)" onclick="openGarraly(this)">
+                    <% if captiontop == nil then captiontop = image['caption']  end%>
+                     <div id="img1-1" class="swiper-slide " style="background-image:url(<%= image['image_file'] %>)" onclick="openGarraly(this)" alt="<%= user['id'] %>">
                         <p class="swipe-caption">
                             <%= image['caption'] %>
                         </p>
                     </div>
+
                 <%end%>
             </div>
             <!-- Add Pagination -->
-            <div class="swiper-pagination top20"></div>
+            <!--<div class="swiper-pagination top20"></div>-->
         </div>
         <div class="bottomarea">
             <div class="iinearea">
                 <%=  image_tag('heart-pink.png',:class => "heart" )%>
-                <p class="iine">いいね　28件</p>
+                <p class="iine">いいね　<%= escapes['tmp_favorite'] %>件</p>
             </div>
             <div class="captionarea">
-                <p class="indexcaption">キャプションを表示</p>
+                <a href="http://localhost:3000/escape/<%= escapes['id'] %>">
+                    <p class="indexcaption"><%= captiontop %>.....>>> 続きを見る <span class=". "></span></p>
+                </a>
             </div>
         </div>
 </div>
@@ -67,4 +69,5 @@
             slideShadows : true
         }
     });
+
 </script>

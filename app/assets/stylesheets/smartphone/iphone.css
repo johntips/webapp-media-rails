@@ -1,3 +1,4 @@
+
 body {
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         font-size: 14px;
@@ -5,13 +6,23 @@ body {
         margin: 0;
         padding: 0;
         background-color: #F8F8F8;
-        width: 380px;
+        width: 100%;
     }
       /*----------sp menucss-----------*/
     .menu{
       width: 100%;
       height: 80px;
       background-color: #ffffff;
+      position: relative;
+      top: -20px;
+
+    }
+    .menu_area{
+        width: 33.3%;
+        position: relative;
+        display: block;
+        text-align: center;
+        float: left;
     }
     .logo{
      width: 30%;
@@ -43,19 +54,25 @@ body {
       margin: 0 auto;
       position: relative;
     }
+    .pagination {
+      display: none;
+    }
    /*-----------sp End menucss-----------*/
 
-
+    .escapes{
+        position: relative;
+        top: -10px;
+    }
     .swiper-container {
         width: 100%;
         /*padding-top: 50px;*/
-        padding-bottom: 100px;
+        padding-bottom: 60px;
     }
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        width: 280px;
-        height: 280px;
+        width: 350px;
+        height: 350px;
     }
     .cardview{
       padding: 1px 0 1px 0px;
@@ -85,19 +102,18 @@ body {
       margin-left: 55px;
     }
     .location{
-
-
       color: rgba(236,204,191,1);
       width:180px;
       margin-left: 55px;
     }
     .museicon{
-      position: relative;
+        position: relative;
         width: 50px;
         border-radius: 50px;
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
-        top: -48px;
+         top: -27px;
+        left: 0px;
     }
     .maincaption{
       color: rgba(3, 3, 3, 0.40 );
@@ -118,20 +134,22 @@ body {
        .size350{
       width: 280px;
       height: 280px;
-    
+
     }
     /*-----------sp cardview css----------*/
    .cardview{
-      padding: 1px 0 1px 0px;
-      border: 1px solid #e9e9e9;
-      /*width: 400px;*/
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      background-color: #ffffff;
-      margin-top:20px;
-      margin-bottom:20px;
+     padding: 1px 0 1px 0px;
+     border: 1px solid #e9e9e9;
+     /*width: 400px;*/
+     margin: 0 auto;
+     position: relative;
+     overflow: hidden;
+     z-index: 1;
+     background-color: #ffffff;
+     margin-top:20px;
+     margin-bottom:20px;
+     margin-left: 2px;
+     margin-right: 2px;
     }
 
     .thumarea{
@@ -149,22 +167,15 @@ body {
       top: 15px;
     }
     .location{
-      position: relative;
-
-      color: rgba(236,204,191,1);
-      width:180px;
-      margin-left: 60px;
-      top: 17px;
+        position: relative;
+        color: rgba(236,204,191,1);
+        width: 100%;
+        /* margin-left: 60px; */
+        top: 17px;
+        font-size: 10px;
+        left: 5px;
     }
-    .museicon{
-      position: relative;
-        width: 50px;
-        border-radius: 50px;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        top: -27px;
-        /*left: -162px;*/
-     }
+
     .maincaption{
       color: rgba(3, 3, 3, 0.40);
       width: 94%;
@@ -188,7 +199,7 @@ body {
       position: relative;
       display: block;
       margin-top: -110px;
-      margin-left: 30px;
+      margin-left:15px;
       width: 40px;
 
     }
@@ -198,8 +209,8 @@ body {
     .iine{
       position: relative;
       display: block;
-      top: -25px;
-      left: 80px;
+      top: -27px;
+      left: 60px;
       color: rgba(3, 3, 3, 0.40);
       font-size: 14px;
 
@@ -211,7 +222,7 @@ body {
       position: relative;
       display: block;
       top: -15px;
-      left: 40px;
+      left: 20px;
       color: rgba(3, 3, 3, 0.40);
       font-size: 14px;
     }
@@ -400,7 +411,7 @@ body {
     -o-box-sizing: content-box;
     box-sizing: content-box;
     height: 640px;
-    position: absolute; 
+    position: absolute;
     left: 19px;
     z-index: -10000;
   }

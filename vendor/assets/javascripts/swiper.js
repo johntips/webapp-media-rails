@@ -230,22 +230,22 @@
         var s = this;
 
         /////////////////////////////
-        console.log("s swiper start");//log
-        console.log(s);//log
+        //console.log("s swiper start");//log
+        //console.log(s);//log
         /////////////////////////////
         // Params
         s.params = params;
 
         /////////////////////////////
-        console.log("s.params");//log
-        console.log(s.params);//log
+        //console.log("s.params");//log
+        //console.log(s.params);//log
         /////////////////////////////
 
         s.originalParams = originalParams;
 
         /////////////////////////////
-        console.log("s.originalParams");//log
-        console.log(s.originalParams);//log
+        //console.log("s.originalParams");//log
+        //console.log(s.originalParams);//log
         /////////////////////////////
 
 
@@ -265,15 +265,15 @@
             if (typeof Dom7 === 'undefined') {
                 $ = window.Dom7 || window.Zepto || window.jQuery;
                 /////////////////////////////
-                console.log("dom liblary and plugin 2");//log
-                //console.log($);//log
+                //console.log("dom liblary and plugin 2");//log
+                ////console.log($);//log
                 /////////////////////////////
             }
             else {
                 $ = Dom7;
                 /////////////////////////////
-                console.log("dom liblary and plugin 3");//log
-                //console.log($);//log
+                //console.log("dom liblary and plugin 3");//log
+                ////console.log($);//log
                 /////////////////////////////
             }
             if (!$) return;
@@ -281,8 +281,8 @@
         // Export it to Swiper instance
         s.$ = $;
         /////////////////////////////
-        console.log("export it to Swiper instance s.$ ");//log
-        console.log(s.$);//log
+        //console.log("export it to Swiper instance s.$ ");//log
+        //console.log(s.$);//log
         /////////////////////////////
         
         /*=========================
@@ -301,8 +301,8 @@
                 }
             }
             /////////////////////////////
-            console.log("breakpoiints");//log
-            console.log(breakpoint);//log
+            //console.log("breakpoiints");//log
+            //console.log(breakpoint);//log
             /////////////////////////////
             return breakpoint || 'max';
         };
@@ -321,8 +321,8 @@
         if (s.params.breakpoints) {
             s.setBreakpoint();
             /////////////////////////////
-            console.log("set break point s.setBreakpoint ");//log
-            console.log(s.setBreakpoint);//log
+            //console.log("set break point s.setBreakpoint ");//log
+            //console.log(s.setBreakpoint);//log
             /////////////////////////////
         }
         
@@ -331,8 +331,8 @@
           ===========================*/
         s.container = $(container);
         /////////////////////////////
-        console.log("s.container  ");//log
-        console.log(s.container);//log
+        //console.log("s.container  ");//log
+        //console.log(s.container);//log
         /////////////////////////////
         if (s.container.length === 0) return;
         if (s.container.length > 1) {
@@ -354,16 +354,16 @@
         s.container.data('swiper', s);
 
         /////////////////////////////
-        console.log("save instance in container html element2");//log
-        console.log(s.container.data('swiper', s));//log
+        //console.log("save instance in container html element2");//log
+        //console.log(s.container.data('swiper', s));//log
         /////////////////////////////
 
 
         s.classNames.push('swiper-container-' + s.params.direction);
 
         /////////////////////////////
-        console.log("save instance in container html element3");//log
-        console.log(s.classNames.push('swiper-container-' + s.params.direction));//log
+        //console.log("save instance in container html element3");//log
+        //console.log(s.classNames.push('swiper-container-' + s.params.direction));//log
         /////////////////////////////
         
         if (s.params.freeMode) {
@@ -420,16 +420,16 @@
             s.params.grabCursor = false;
         }
         /////////////////////////////
-        console.log("grab cursor tatch dicidion");//log
-        console.log(s.params.grabCursor );//log
+        //console.log("grab cursor tatch dicidion");//log
+        //console.log(s.params.grabCursor );//log
         /////////////////////////////
         
         // Wrapper
         s.wrapper = s.container.children('.' + s.params.wrapperClass);
 
         /////////////////////////////
-        console.log("wrapper");//log
-        console.log(s.wrapper );//log
+        //console.log("wrapper");//log
+        //console.log(s.wrapper );//log
         /////////////////////////////
 
 
@@ -443,8 +443,8 @@
         }
 
         /////////////////////////////
-        console.log("pagenation class name");//log
-        console.log(s.paginationContainer.className);//log
+        //console.log("pagenation class name");//log
+        //console.log(s.paginationContainer.className);//log
         /////////////////////////////
 
 

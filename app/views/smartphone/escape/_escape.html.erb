@@ -12,7 +12,7 @@
 
         <div class="thumarea">
             <p class="username"><%= user['name'] %></p>
-            <p class="location"><%= escapes['location_name'] %></p>
+            <p class="location">@<%= escapes['location_name'] %></p>
             <img class="museicon" src="<%= user['thumb_image_file'] %>">
         </div>
         <p class="maincaption">
@@ -37,7 +37,7 @@
                 <%end%>
             </div>
             <!-- Add Pagination -->
-            <div class="swiper-pagination top20"></div>
+            <!--<div class="swiper-pagination top20"></div>-->
         </div>
         <div class="bottomarea">
             <div class="iinearea">

@@ -1,0 +1,33 @@
+
+<% collection.each do |collection| %>
+<% @users = Users.where('id = ?',collection['user_id']) %>
+
+    <% @users.each do |user| %>
+<div class="cardview">
+        <div class="thumarea">
+            <p class="username"><%= user['name'] %></p>
+
+            <img class="museicon" src="<%= user['thumb_image_file'] %>">
+        </div>
+        <p class="maincaption">
+            <%= collection['title']%>
+        </p>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <a href="http://localhost:3000/collection/<%= collection['id']%>">
+                    <image class="collection-image" src="<%= collection['cover_image_file'];  %>">
+                 </a>
+
+            </div>
+        </div>
+        <div class="bottomarea">
+            <div class="iinearea">
+                <%=  image_tag('heart-pink.png',:class => "heart" )%>
+                <p class="iine">いいね　<%= collection['tmp_favorite'] %>件</p>
+            </div>
+        </div>
+</div>
+    <% end %>
+<% end %>
+

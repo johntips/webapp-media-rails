@@ -48,7 +48,7 @@
         }
 
 
-        //console.log(items);
+        console.log(items);
         var options = {
             showAnimationDuration: 300,
             hideAnimationDuration: 300,
@@ -59,7 +59,6 @@
 
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
         ///////////////////////////////////
-            console.log("new photoswipe instance");
             console.log("new photoswipe instance");
         ///////////////////////////////////
         gallery.init();
