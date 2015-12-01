@@ -1,20 +1,30 @@
-application = 'reserve-hacker'
+# -*- coding: utf-8 -*-
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+timeout 15
+preload_app true  # 更新時ダウンタイム無し
 
-worker_processes 2 #EC2で作ったAmazonLinuxのCPU数より少し大きく
-app_path = "/var/www/html/webapp-tabimuse-rails"
-#標準だとsharedに作成される
-#ここが一番重要
-#Nginxのupstreamで設定した「server unix:/var/www/あなたのアプリ名/shared/tmp/sockets/unicorn.sock」の場所と合わせる！！
-listen "#{app_path}/tmp/sockets/unicorn.sock"
-pid "#{app_path}/tmp/unicorn.pid"
+listen "/tmp/unicorn.sock"
+pid "/tmp/unicorn.pid"
 
-#何秒でタイムアウトするか
-timeout 60
+before_fork do |server, worker|
+  Signal.trap 'TERM' do
+    puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
+    Process.kill 'QUIT', Process.pid
+  end
 
-#ダウンタムをなくす
-preload_app true
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.connection.disconnect!
+end
 
-stdout_path "#{app_path}/log/production.log"# 標準出力ログ出力先
-stderr_path "#{app_path}/log/production.log"# 標準エラー出力ログ出力先
+after_fork do |server, worker|
+  Signal.trap 'TERM' do
+    puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
+  end
 
-GC.respond_to?(:copy_on_write_friendly=) and GC.copy_on_write_friendly = true
+  defined?(ActiveRecord::Base) and
+    ActiveRecord::Base.establish_connection
+end
+
+# ログの出力
+stderr_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
+stdout_path File.expand_path('log/unicorn.log', ENV['RAILS_ROOT'])
