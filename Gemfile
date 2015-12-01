@@ -26,6 +26,16 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'mysql2', '~> 0.3.13'
 gem 'jpmobile'
 gem 'jquery-turbolinks'
+gem 'unicorn'
+
+
+group :development do
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+  gem 'capistrano3-unicorn'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

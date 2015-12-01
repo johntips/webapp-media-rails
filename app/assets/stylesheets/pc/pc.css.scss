@@ -1,4 +1,4 @@
-html{
+html {
   overflow-x: hidden;
 }
 
@@ -78,6 +78,7 @@ body {
   width: 340px;
   height: 340px;
 }
+
 .swiper-slide-collection {
   background-position: center;
   background-size: cover;
@@ -215,11 +216,11 @@ body {
 }
 
 .swiper-slide-active .swipe-caption {
-  /*color: rgba(10,24,24,0.5);*/
+
 }
 
 .swiper-wrapper {
-  /*margin-left: 135px;*/
+
 }
 
 .top20 {
@@ -256,7 +257,7 @@ ul {
 }
 
 li {
-  font-size: 8vmin; /*cool*/
+  font-size: 8vmin;
   float: left;
   width: 84vw;
   height: 100%;
@@ -287,7 +288,8 @@ li {
   width: 100%;
   margin-top: 20px;
 }
-.collection-image{
+
+.collection-image {
   width: 100%;
   height: auto;
 }
@@ -308,8 +310,6 @@ li {
   margin-left: 15px;
   width: 35px;
 }
-
-
 
 .museicon-collection {
   position: relative;
@@ -438,7 +438,7 @@ li {
   position: relative;
   height: 60px;
   width: 100%;
-  /*margin-top: -20px;*/
+
 }
 
 .area-collection-detail {
@@ -463,7 +463,7 @@ li {
   width: 1px;
   background: #BBBBBB;
   border: solid 1px #BBBBBB;
-  /* padding: 20px; */
+
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   -o-box-sizing: content-box;
@@ -491,6 +491,7 @@ li {
   font-size: 20px;
   color: #878787;
 }
+
 .iine-collection {
   position: relative;
   display: block;
@@ -533,16 +534,18 @@ li {
   margin-top: 90px;
   z-index: 10000;
 }
-.slide-collection-detail{
+
+.slide-collection-detail {
   background-position: center;
   background-size: cover;
   width: 310px;
   height: 310px;
 }
+
 /*--------pc muse list css -----------*/
 .maincontents-muse {
   width: 675px;
-  /* height: 600px; */
+
   position: relative;
   margin: 0 auto;
 }
@@ -636,7 +639,6 @@ li {
 
 .area-muse-detail {
   margin-bottom: 50px;
-  /*border-bottom: 1px solid rgba(128, 128, 128, 0.12);*/
   padding-bottom: 10px;
 }
 
