@@ -28,7 +28,7 @@ gem 'jpmobile'
 gem 'jquery-turbolinks'
 gem 'unicorn'
 gem 'rb-readline'
-
+gem 'pry'
 
 group :development do
   gem 'capistrano', '~> 3.2.1'
