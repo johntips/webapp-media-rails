@@ -27,6 +27,7 @@ gem 'mysql2', '~> 0.3.13'
 gem 'jpmobile'
 gem 'jquery-turbolinks'
 gem 'unicorn'
+gem 'rb-readline'
 
 
 group :development do
