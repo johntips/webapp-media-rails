@@ -6,6 +6,10 @@ preload_app true  # 更新時ダウンタイム無し
 listen "/tmp/unicorn.sock"
 pid "/tmp/unicorn.pid"
 
+before_exec do |server, worker|
+  ENV['BUNDLE_GEMFILE'] =  "/var/www/html/webapp-tabimuse-rails/current/Gemfile"
+end
+
 before_fork do |server, worker|
   Signal.trap 'TERM' do
     puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
