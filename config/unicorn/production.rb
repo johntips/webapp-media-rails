@@ -1,4 +1,4 @@
-@app_path = '/var/www/html/webapp-tabimuse-rails'
+@app_path = "/var/www/html/webapp-tabimuse-rails"
 working_directory @app_path + "/current"
 
 worker_processes 2
