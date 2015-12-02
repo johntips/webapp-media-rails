@@ -94,12 +94,12 @@
                     </div>
                 </div>
             <% end %>
-                <div class="circle"></div>
-                <div class="link_to_collection_from_detail_area">
-                    <%= link_to  ({ :controller => :collection, :action => :index}),{:class => "textpink"  } do %>
-                            <p class="link_to_collection_from_detail"> >>>>>次のコレクションをみる</p>
-                    <% end %>
-                </div>
+            <div class="circle"></div>
+            <div class="link_to_collection_from_detail_area">
+                <%= link_to  ({ :controller => :collection, :action => :index}),{:class => "textpink"  } do %>
+                    <p class="link_to_collection_from_detail"> >>>>>次のコレクションをみる</p>
+                <% end %>
+            </div>
         </div>
     <% end %>
 <% end %>
@@ -119,5 +119,23 @@
             slideShadows: true
         }
     });
+    $(document).ready(function ($) {
 
+        var name = "#example"
+        var count = 1
+        var idset = name + count
+        console.log(idset);
+        $('#example2').sliderPro({
+            // autoScaleLayers:false,//キャプションの自動変形
+            waitForLayers: true,//キャプションのアニメーションが終了してからスライドするか
+            width: 370,//横幅
+            height: 370,
+            autoplay: false,//自動再生
+            // arrows: true,//左右の矢印
+            buttons: true,//ナビゲーションボタン
+            slideDistance: 10//スライド同士の距離
+        });
+
+
+    });
 </script>

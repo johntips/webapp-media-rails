@@ -12,6 +12,9 @@ body {
   background-color: #F8F8F8;
   overflow-x: hidden;
 }
+.textpink{
+  color: rgba(236, 204, 191, 1);
+}
 
 /*----------pc menucss-----------*/
 .menu {
@@ -541,6 +544,19 @@ li {
   width: 310px;
   height: 310px;
 }
+.link_to_collection_from_detail_area{
+  z-index: 10000;
+  background-color: white;
+}
+.link_to_collection_from_detail{
+  color: rgba(236, 204, 191, 1);
+  width: 100%;
+  position: relative;
+  text-align: center;
+  font-size: 15px;
+  top: -20px;
+}
+
 
 /*--------pc muse list css -----------*/
 .maincontents-muse {

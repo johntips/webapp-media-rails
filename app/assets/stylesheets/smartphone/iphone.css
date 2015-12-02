@@ -80,8 +80,8 @@ body {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 350px;
-    height: 350px;
+    width: 330px;
+    height: 330px;
 }
 
 .cardview {
@@ -318,6 +318,12 @@ body {
     width: 100%;
     top: 5px;
 }
+.img-smartphone-collection{
+    width: 100%;
+}
+.collection-image{
+    width: 100%;
+}
 
 /*------collection detail css-----*/
 
@@ -499,10 +505,37 @@ body {
 
 .bottomarea-collection-detail {
     position: relative;
-    margin-top: 30px;
+    margin-top: 60px;
     z-index: 10000;
 }
+.heart-collection-detail {
+    position: relative;
+    display: block;
+    margin-top: -110px;
+    margin-left: 25px;
+    width: 40px;
+}
+.iine-collection-detail {
+    position: relative;
+    display: block;
+    top: -25px;
+    left: 70px;
+    color: rgba(3, 3, 3, 0.40);
+    font-size: 12px;
 
+}
+.link_to_collection_from_detail_area{
+    z-index: 10000;
+    background-color: white;
+}
+.link_to_collection_from_detail{
+    color: rgba(236, 204, 191, 1);
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 15px;
+    top: -20px;
+}
 /*---------sp muse list css -----------*/
 .menu-muse {
     width: 100%;
