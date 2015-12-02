@@ -15,9 +15,10 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <a href="http://localhost:3000/collection/<%= collection['id']%>">
+
+                <%= link_to  ({ :controller => :collection, :action => :show, :id => collection['id']  }) do %>
                     <image class="collection-image" src="<%= collection['cover_image_file'];  %>">
-                 </a>
+                <% end %>
 
             </div>
         </div>

@@ -3,7 +3,7 @@
 <% @users = Users.where('id = ?',escapes['user_id']) %>
 <% @images = Images.where('escape_id = ?',escapes['id']) %>
 <% @tags =  Escape_themes.where('escape_id = ?',escapes['id']) %>
-<% captiontop = nil  %>
+<% @captiontop = nil  %>
 <% garally_count = 0 %>
     <% image_count = 0 %>
     <% @users.each do |user| %>
@@ -27,7 +27,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <% @images.each do |image| %>
-                    <% if captiontop == nil then captiontop = image['caption']  end%>
+                    <% if @captiontop == nil then @captiontop = image['caption']  end%>
                      <div id="img1-1" class="swiper-slide " style="background-image:url(<%= image['image_file'] %>)" onclick="openGarraly(this)" alt="<%= user['id'] %>">
                         <p class="swipe-caption">
                             <%= image['caption'] %>
@@ -45,9 +45,10 @@
                 <p class="iine">いいね　<%= escapes['tmp_favorite'] %>件</p>
             </div>
             <div class="captionarea">
-                <a href="http://localhost:3000/escape/<%= escapes['id'] %>">
-                    <p class="indexcaption"><%= captiontop %>.....>>> 続きを見る <span class=". "></span></p>
-                </a>
+
+                <%= link_to  ({ :controller => :escape, :action => :show, :id => escapes['id']  }) do %>
+                    <p class="indexcaption"><%= @captiontop %>.....>>> 続きを見る </p>
+                <% end %>
             </div>
         </div>
 </div>
