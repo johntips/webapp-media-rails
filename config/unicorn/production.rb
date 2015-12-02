@@ -10,9 +10,14 @@ pid "/var/www/html/webapp-tabimuse-rails/shared/tmp/pids/unicorn.pid"
 stderr_path "#{@app_path}/current/log/unicorn.stderr.log"
 stdout_path "#{@app_path}/current/log/unicorn.stdout.log"
 
-before_fork do |server, worker|
-  ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', ENV['RAILS_ROOT'])
+# before_fork do |server, worker|
+#   ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', ENV['RAILS_ROOT'])
+# end
+
+before_exec do |server, worker|
+  ENV['BUNDLE_GEMFILE'] = @app_path + "/current/Gemfile"
 end
+
 
 before_fork do |server, worker|
   if defined?(ActiveRecord::Base)
