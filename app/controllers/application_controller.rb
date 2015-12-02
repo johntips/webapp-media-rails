@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include Jpmobile::ViewSelector
   before_filter :set_view_path
+  before_filter :url_check
 
   private
   def set_view_path
@@ -11,4 +12,35 @@ class ApplicationController < ActionController::Base
     prepend_view_path(Rails.root + 'app/views' + path)
     logger.debug(path)
   end
+
+  def url_check
+
+   @url = request.path
+    case @url
+
+      when   /collection/
+        puts "match"
+        @menu_img_collection = 'collection-pink.png'
+        @menu_img_timeline = 'timeline.png'
+        @menu_img_muse = 'muse.png'
+
+      when    /timeline/
+        @menu_img_timeline = 'timeline-pink.png'
+        @menu_img_collection = 'collection.png'
+        @menu_img_muse = 'muse.png'
+
+      when   /muse/
+        @menu_img_muse = 'muse-pink.png'
+        @menu_img_collection = 'collection.png'
+        @menu_img_timeline = 'collection.png'
+
+      else
+
+        @menu_img_muse = 'muse.png'
+        @menu_img_collection = 'collection.png'
+        @menu_img_timeline = 'timeline-pink.png'
+    end
+
+  end
+
 end
