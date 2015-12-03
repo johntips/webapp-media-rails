@@ -9,7 +9,7 @@ set :log_level, :debug
 set :pty, true
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets bundle public/system public/assets}
 set :default_env, { path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH" }
-set :keep_releases, 5
+set :keep_releases, 10
 
 
 
@@ -21,13 +21,13 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  task :precompile do
-    on roles(fetch(:assets_roles)) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, "assets:precompile"
-        end
-      end
-    end
-  end
+  # task :precompile do
+  #   on roles(fetch(:assets_roles)) do
+  #     within release_path do
+  #       with rails_env: fetch(:rails_env) do
+  #         execute :rake, "assets:precompile"
+  #       end
+  #     end
+  #   end
+  # end
 end

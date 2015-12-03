@@ -4,20 +4,22 @@
 shared_path = "/var/www/html/webapp-tabimuse-rails/shared"
 current_path =  "/var/www/html/webapp-tabimuse-rails/current"
 
-
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
-timeout 15
-preload_app true  # 更新時ダウンタイム無し
-working_directory current_path
-
 listen File.expand_path('tmp/sockets/unicorn.sock', shared_path)
 pid File.expand_path('tmp/pids/unicorn.pid', shared_path)
 
 
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+
+timeout 60
+preload_app true  # 更新時ダウンタイム無し
+working_directory current_path
+
+
 
 before_exec do |server, worker|
-  ENV['BUNDLE_GEMFILE'] =  "/var/www/html/webapp-tabimuse-rails/current/Gemfile"
+  ENV['BUNDLE_GEMFILE'] = "#{current_path}/Gemfile"
 end
+
 
 before_fork do |server, worker|
   ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', current_path)

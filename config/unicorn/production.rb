@@ -3,21 +3,19 @@ working_directory @app_path + "/current"
 
 worker_processes 2
 preload_app true
-timeout 301
+timeout 30
 listen "/tmp/unicorn.sock", :backlog => 64
 pid "/var/www/html/webapp-tabimuse-rails/shared/tmp/pids/unicorn.pid"
 
-stderr_path "#{@app_path}/current/log/unicorn.stderr.log"
-stdout_path "#{@app_path}/current/log/unicorn.stdout.log"
+stderr_path "#{@app_path}/log/unicorn.stderr.log"
+stdout_path "#{@app_path}/log/unicorn.stdout.log"
 
 # before_fork do |server, worker|
 #   ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', ENV['RAILS_ROOT'])
 # end
-
-before_exec do |server, worker|
-  ENV['BUNDLE_GEMFILE'] = @app_path + "/current/Gemfile"
+before_fork do |server, worker|
+  ENV['BUNDLE_GEMFILE'] = File.expand_path('Gemfile', ENV['RAILS_ROOT'])
 end
-
 
 before_fork do |server, worker|
   if defined?(ActiveRecord::Base)

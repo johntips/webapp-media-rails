@@ -1,0 +1,93 @@
+
+<% detail_escape.each do |escapes| %>
+    <% @users = Users.where('id = ?',escapes['user_id']) %>
+    <% @images = Images.where('escape_id = ?',escapes['id']) %>
+    <% @tags =  Escape_themes.where('escape_id = ?',escapes['id']) %>
+
+
+
+    <% garally_count = 0 %>
+    <% image_count = 0 %>
+    <% @users.each do |user| %>
+        <div class="cardview">
+            <div class="thumarea">
+                <p class="username"><%= user['name'] %></p>
+                <p class="location">@<%= escapes['location_name'] %></p>
+                <img class="museicon" src="<%= user['thumb_image_file'] %>">
+            </div>
+            <p class="maincaption">
+                <%= escapes['content']%>
+            </p>
+            <div class="tagarea">
+                <% @tags.each do |tag| %>
+                    <% @tag_name =  Themes.where('id = ?',tag['theme_id']) %>
+                    <% @tag_name.each do |tagname| %>
+                        <a class="tag">#<%= tagname['name'] %></a>
+                    <%end%>
+                <%end%>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <% @images.each do |image| %>
+                        <div id="img1-1" class="swiper-slide " style="background-image:url(<%= image['image_file'] %>)" onclick="openGarraly(this)">
+                            <p class="swipe-caption">
+                                <%= image['caption'] %>
+                            </p>
+                        </div>
+                    <%end%>
+                </div>
+                    <!-- Add Pagination -->
+                <div class="swiper-pagination top20"></div>
+            </div>
+            <div class="bottomarea">
+                <div class="iinearea">
+                    <%=  image_tag('heart-pink.png',:class => "heart" )%>
+                    <p class="iine">いいね　28件</p>
+                </div>
+                <div class="captionarea">
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    <% end %>
+<% end %>
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 10,
+            stretch: 20,
+            depth: 190,
+            modifier: 1,
+            slideShadows : true
+        }
+    });
+    $( document ).ready(function( $ ) {
+
+        var name = "#example"
+        var count = 1
+        var idset = name + count
+        console.log(idset);
+        $( '#example2' ).sliderPro({
+            // autoScaleLayers:false,//キャプションの自動変形
+            waitForLayers: true,//キャプションのアニメーションが終了してからスライドするか
+            width: 370,//横幅
+            height: 370,
+            autoplay:false,//自動再生
+            // arrows: true,//左右の矢印
+            buttons: true,//ナビゲーションボタン
+            slideDistance:10//スライド同士の距離
+        });
+
+
+    });
+</script>
