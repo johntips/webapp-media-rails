@@ -45,7 +45,9 @@
                 <p class="iine">いいね　28件</p>
             </div>
             <div class="captionarea">
-                <p class="indexcaption">キャプションを表示</p>
+                <%= link_to  ({ :controller => :escape, :action => :show, :id => escapes['id']  }) do %>
+                    <p class="indexcaption"><%= @captiontop %>.....>>> 続きを見る </p>
+                <% end %>
             </div>
         </div>
 </div>

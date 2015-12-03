@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include Jpmobile::ViewSelector
   before_filter :set_view_path
-  before_filter :url_check
+  before_filter :set_menu_url
 
   private
   def set_view_path
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     logger.debug(path)
   end
 
-  def url_check
+  def set_menu_url
 
    @url = request.path
     case @url
@@ -35,7 +35,6 @@ class ApplicationController < ActionController::Base
         @menu_img_timeline = 'collection.png'
 
       else
-
         @menu_img_muse = 'muse.png'
         @menu_img_collection = 'collection.png'
         @menu_img_timeline = 'timeline-pink.png'
