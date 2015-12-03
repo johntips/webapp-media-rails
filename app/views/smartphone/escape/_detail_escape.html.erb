@@ -39,7 +39,7 @@
                     <!-- Add Pagination -->
                 <div class="swiper-pagination top20"></div>
             </div>
-            <div class="bottomarea">
+            <div class="bottomarea-timeline-detail">
                 <div class="iinearea">
                     <%=  image_tag('heart-pink.png',:class => "heart" )%>
                     <p class="iine">いいね　28件</p>
@@ -47,6 +47,9 @@
                 <div class="captionarea">
 
                 </div>
+                <%= link_to  ({ :controller => :escape, :action => :index}),{:class => "textpink"  } do %>
+                    <p class="link_to_collection_from_detail"> >>>>>戻る</p>
+                <% end %>
             </div>
 
 
