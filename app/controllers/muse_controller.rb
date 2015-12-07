@@ -1,7 +1,7 @@
 class MuseController < ApplicationController
   def index
-    @muse = Users.order(time: :desc).paginate(:page => params[:page],:per_page => 4)
-    logger.debug(@escapess)
+    @muse = Users.where.not(thumb_image_file: "").where(is_muse: 1).order(img_count: :desc).paginate(:page => params[:page],:per_page => 4)
+    logger.debug(@muse)
   end
 
   def show

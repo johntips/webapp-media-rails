@@ -85,7 +85,7 @@
 
                     <div class="bottomarea-collection-detail">
                         <div class="iinearea">
-                            <%=  image_tag('heart-pink.png',:class => "heart-collection-detail" )%>
+                            <%= image_tag('heart-pink.png', :class => "heart-collection-detail") %>
                             <p class="iine-collection-detail">いいね　<%= escape['tmp_favorite'] %>件</p>
                         </div>
                         <!--<div class="captionarea">-->
@@ -94,12 +94,12 @@
                     </div>
                 </div>
             <% end %>
-                <div class="circle"></div>
-                <div class="link_to_collection_from_detail_area">
-            <%= link_to  ({ :controller => :collection, :action => :index}),{:class => "textpink"  } do %>
-                <p class="link_to_collection_from_detail"> >>>>>次のコレクションをみる</p>
-            <% end %>
-        </div>
+            <div class="circle"></div>
+            <div class="link_to_collection_from_detail_area">
+                <%= link_to ({:controller => :collection, :action => :index}), {:class => "textpink"} do %>
+                    <p class="link_to_collection_from_detail"> >>>>>次のコレクションをみる</p>
+                <% end %>
+            </div>
         </div>
     <% end %>
 <% end %>

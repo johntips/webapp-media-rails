@@ -53,38 +53,3 @@
     <% end %>
 <% end %>
 
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflow: {
-            rotate: 10,
-            stretch: 20,
-            depth: 190,
-            modifier: 1,
-            slideShadows: true
-        }
-    });
-    $(document).ready(function ($) {
-
-        var name = "#example"
-        var count = 1
-        var idset = name + count
-        console.log(idset);
-        $('#example2').sliderPro({
-            // autoScaleLayers:false,//キャプションの自動変形
-            waitForLayers: true,//キャプションのアニメーションが終了してからスライドするか
-            width: 370,//横幅
-            height: 370,
-            autoplay: false,//自動再生
-            // arrows: true,//左右の矢印
-            buttons: true,//ナビゲーションボタン
-            slideDistance: 10//スライド同士の距離
-        });
-
-
-    });
-</script>

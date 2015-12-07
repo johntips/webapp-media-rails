@@ -1,0 +1,62 @@
+<% muse_count = 1 %>
+<% row_count = 1 %>
+<% @maindiv = '<div class="maincontents-muse">' %>
+<% @endmaindiv = '</div>' %>
+
+<% muse.each do |muses| %>
+
+    <!--もし、muse_count が2で割り切れないなら、divをはき出す。-->
+    <%= if row_count % 2 == 1 then
+          @maindiv.html_safe
+        end
+    %>
+
+    <% if muse_count % 2 == 1 then
+         @leftright = "cardview-muse-left"
+       else
+         @leftright = "cardview-muse-right"
+       end
+    %>
+
+    <div class="<%= @leftright %>">
+        <%= link_to ({:controller => :muse, :action => :show, :id => muses['id']}) do %>
+            <img class="thumbnail-muse" src="<%= muses['thumb_image_file'] %>">
+        <% end %>
+
+        <div class="bottomarea-muse">
+            <div class="iinearea-muse">
+                <p class="musename"><%= muses['username'] %></p>
+
+                <p class="museposition"><%= muses['job'] %>　<%= muses['position'] %></p>
+            </div>
+        </div>
+
+    </div>
+
+    <% muse_count = muse_count + 1 %>
+    <!--もし、muse_count が2で割り切れないなら、divをはき出す。-->
+    <% if row_count % 2 == 1 then
+         @endmaindiv.html_safe
+         row_count = row_count + 1
+       end
+    %>
+<% end %>
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflow: {
+            rotate: 10,
+            stretch: 20,
+            depth: 190,
+            modifier: 1,
+            slideShadows: true
+        }
+    });
+
+</script>

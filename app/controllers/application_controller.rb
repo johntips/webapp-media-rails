@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
       when   /muse/
         @menu_img_muse = 'muse-pink.png'
         @menu_img_collection = 'collection.png'
-        @menu_img_timeline = 'collection.png'
+        @menu_img_timeline = 'timeline.png'
 
       else
         @menu_img_muse = 'muse.png'
