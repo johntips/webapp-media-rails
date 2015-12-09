@@ -276,6 +276,9 @@ li {
   height: 60px;
   width: 100%; }
 
+.collection-thumb100p {
+  width: 100%; }
+
 /*------pc collection detail css-----*/
 .museicon-collection-detail {
   position: relative;
@@ -337,9 +340,7 @@ li {
   height: 100%;
   /*padding: 30px;*/
   top: 0;
-  left: 0;
-  -webkit-filter: blur(2px);
-  filter: blur(2px); }
+  left: 0; }
 
 .panel-in {
   /*padding: 30px;*/

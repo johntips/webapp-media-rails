@@ -16,7 +16,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
 
-                <%= link_to  ({ :controller => :collection, :action => :show, :id => collection['id']  }) do %>
+                <%= link_to  ({ :controller => :collection, :action => :show, :id => collection['id']  }),{:class =>'collection-thumb100p'} do %>
                     <image class="collection-image" src="<%= collection['cover_image_file'];  %>">
                 <% end %>
 

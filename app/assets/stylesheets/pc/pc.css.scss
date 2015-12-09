@@ -339,6 +339,9 @@ li {
   height: 60px;
   width: 100%;
 }
+.collection-thumb100p{
+  width: 100%;
+}
 
 /*------pc collection detail css-----*/
 
@@ -413,8 +416,8 @@ li {
   /*padding: 30px;*/
   top: 0;
   left: 0;
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
+//  -webkit-filter: blur(2px);
+//  filter: blur(2px);
 }
 
 .panel-in {

@@ -406,8 +406,8 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    -webkit-filter: blur(1px);
-    filter: blur(1px);
+    /*-webkit-filter: blur(1px);*/
+    /*filter: blur(1px);*/
 }
 
 .panel-in {
