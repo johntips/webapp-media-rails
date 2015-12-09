@@ -1,0 +1,20 @@
+added muse/index web
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   app/assets/stylesheets/pc/pc.css.css
+#	modified:   app/assets/stylesheets/pc/pc.css.css.map
+#	modified:   app/assets/stylesheets/pc/pc.css.scss
+#	modified:   app/controllers/application_controller.rb
+#	modified:   app/controllers/muse_controller.rb
+#	modified:   app/views/pc/collection/_detail_collection.html.erb
+#	modified:   app/views/pc/escape/_detail_escape.html.erb
+#	new file:   app/views/pc/muse/_detail_muse.html.erb
+#	new file:   app/views/pc/muse/_muse.html.erb
+#	new file:   app/views/pc/muse/index.html.erb
+#	new file:   app/views/pc/muse/index.js.erb
+#	new file:   app/views/pc/muse/show.html.erb
+#
