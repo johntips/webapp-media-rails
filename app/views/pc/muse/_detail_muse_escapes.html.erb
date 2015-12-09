@@ -1,0 +1,8 @@
+<% escapes.each do |escape| %>
+    <% @images = Images.where('escape_id = ? and order_in_escape = ?', escape['id'], 0) %>
+    <% @images.each do |image| %>
+        <%= link_to ({:controller => :escape, :action => :show, :id => image['escape_id']}), {:class => 'collection-thumb100p'} do %>
+            <img class="row3-row" src="<%= image['image_file'] %>">
+        <% end %>
+    <% end %>
+<% end %>

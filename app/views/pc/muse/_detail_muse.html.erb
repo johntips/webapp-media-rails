@@ -1,55 +1,110 @@
-<% detail_escape.each do |escapes| %>
-    <% @users = Users.where('id = ?', escapes['user_id']) %>
-    <% @images = Images.where('escape_id = ?', escapes['id']) %>
-    <% @tags = Escape_themes.where('escape_id = ?', escapes['id']) %>
+<% detail_muse.each do |muse| %>
+    <% @escapes = Escapes.where('user_id = ?', muse['id']).order(time: :desc).paginate(:page => params[:page],:per_page => 3) %>
+
+    <% @collections = Collections.where('user_id = ?', muse['id']).order(end_date: :desc) %>
 
     <% garally_count = 0 %>
     <% image_count = 0 %>
-    <% @users.each do |user| %>
-        <div class="cardview">
-            <div class="thumarea">
-                <p class="username"><%= user['name'] %></p>
+    <div class="cardview-muse">
+        <div class="area-muse-detail">
+            <div class="bottomarea-muse">
+                <div class="iinearea-muse">
+                    <img class="museicon-muse-detail" src="<%= muse['thumb_image_file'] %>">
 
-                <p class="location">@<%= escapes['location_name'] %></p>
-                <img class="museicon" src="<%= user['thumb_image_file'] %>">
+                    <p class="musecoporation-detail"><%= muse['job'] %></p>
+
+                    <p class="museposition-detail"><%= muse['position'] %></p>
+
+                    <p class="musename-detail"><%= muse['username'] %></p>
+                </div>
+
             </div>
-            <p class="maincaption">
-                <%= escapes['content'] %>
+            <div class="intro">
+            </div>
+
+            <p class="muse-detail-intro"><%= muse['biography'] %>
             </p>
-
-            <div class="tagarea">
-                <% @tags.each do |tag| %>
-                    <% @tag_name = Themes.where('id = ?', tag['theme_id']) %>
-                    <% @tag_name.each do |tagname| %>
-                        <a class="tag">#<%= tagname['name'] %></a>
-                    <% end %>
-                <% end %>
-            </div>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <% @images.each do |image| %>
-                        <div id="img1-1" class="swiper-slide " style="background-image:url(<%= image['image_file'] %>)" onclick="openGarraly(this)">
-                            <p class="swipe-caption">
-                                <%= image['caption'] %>
-                            </p>
-                        </div>
-                    <% end %>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination top20"></div>
-            </div>
-            <div class="bottomarea">
-                <div class="iinearea">
-                    <%= image_tag('heart-pink.png', :class => "heart") %>
-                    <p class="iine">いいね　28件</p>
-                </div>
-                <div class="captionarea">
-
-                </div>
-            </div>
-
-
         </div>
-    <% end %>
+        <ul class="tab">
+            <li class="litab1 select litab1-selected">TIMELINE</li>
+            <li class="litab2 litab2-notselected">ESCAPE</li>
+
+        </ul>
+        <ul class="content">
+            <li class="">
+                <div class="row3">
+
+                    <%= render :partial => "muse/detail_muse_escapes",  locals: { escapes: @escapes} %>
+
+                </div>
+            </li>
+            <li class="hide">
+                <div class="row2">
+                    <div class="row2maincontents-muse">
+                        <!-- //////////// -->
+                        <% @collections.each do |collection| %>
+                            <div class="row2cardview-muse-left">
+
+
+                                <%= link_to ({:controller => :collection, :action => :show, :id => collection['id']}), {:class => ''} do %>
+                                    <img class="thumbnail-muse" src="<%= collection['cover_image_file'] %>">
+                                <% end %>
+
+                                <div class="bottomarea-muse">
+                                    <div class="iinearea-muse-detail">
+                                        <p class="collectionname-muse-detail "><%= collection['title'] %></p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 <% end %>
+<%= will_paginate @escapes %>
+
+<script>
+
+    $(function () {
+        //タブクリックファンクション
+        $('.tab li').click(function () {
+
+            //タブが何番目かを調べ
+            var index = $('.tab li').index(this);
+
+            //コンテンツを一度すべて非表示にし、
+            $('.content li').css("display", "none");
+
+            //クリックされたタブと同じ順番のコンテンツを表示します。
+            $('.content li').eq(index).css('display', 'block');
+
+
+            //一度タブについているクラスselectを消し、
+            $('.tab li').removeClass('select');
+
+            $('.tab li').removeClass('litab1-selected');
+            $('.tab li').removeClass('litab1-notselected');
+            $('.tab li').removeClass('litab2-selected');
+            $('.tab li').removeClass('litab2-notselected');
+
+            // alert(index);
+            if (index == 0) {
+                $('.tab .litab1').addClass('litab1-selected');
+                $('.tab .litab2').addClass('litab2-notselected');
+            } else if (index == 1) {
+                $('.tab .litab1').addClass('litab1-notselected');
+                $('.tab .litab2').addClass('litab2-selected');
+            } else {
+
+            }
+            //クリックされたタブのみにクラスselectをつけます。
+            $(this).addClass('select');
+
+        });
+    });
+</script>
 

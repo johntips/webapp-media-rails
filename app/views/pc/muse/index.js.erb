@@ -1,2 +1,3 @@
+console.log("index読まれたよ")
 $('#escapes').append('<%= escape_javascript render :partial => "muse/muse",  locals: { muse: @muse}  %>');
 $('.pagination').replaceWith('<%= escape_javascript will_paginate(@muse) %>');
